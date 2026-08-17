@@ -1634,6 +1634,28 @@ footer{
 }
 </style>
 
+
+<style>
+.about-invite-form{margin-top:34px;max-width:520px}
+.about-invite-form .form{display:flex;gap:18px;align-items:flex-end}
+.about-invite-form input{
+  flex:1;background:transparent;border:0;border-bottom:1px solid rgba(244,240,232,.45);
+  color:#efe3d5;padding:12px 0;font:inherit;outline:none
+}
+.about-invite-form input::placeholder{color:#9f9185;font-size:11px;letter-spacing:.12em}
+.about-invite-form button{
+  background:transparent;border:0;border-bottom:1px solid rgba(244,240,232,.65);
+  color:#efe3d5;padding:12px 0;cursor:pointer;font-size:11px;letter-spacing:.12em
+}
+.invite-form-status{margin-top:16px;min-height:20px;font-size:13px;color:#cdbdaf}
+.invite-form-status.success{color:#efe3d5}
+.invite-form-status.error{color:#d7a99b}
+@media(max-width:700px){
+ .about-invite-form .form{flex-direction:column;align-items:stretch}
+ .about-invite-form input,.about-invite-form button{width:100%}
+}
+</style>
+
 </head>
 <body>
 <nav class="nav">
@@ -1701,7 +1723,17 @@ footer{
 
 <section class="about-end">
   <div class="about-end-copy">
-    <div class="micro">03 / WHO IT'S FOR</div>
+    <div class="micro">03 / WHO IT'S FOR
+<div class="about-invite-form">
+  <form class="form invite-request-form" action="https://formspree.io/f/mvkpwkan" method="POST">
+    <input type="hidden" name="_subject" value="New Think & Gather Invite Request">
+    <input type="hidden" name="source" value="Think & Gather About Page">
+    <input type="email" name="email" placeholder="YOUR EMAIL ADDRESS" required>
+    <button type="submit">REQUEST AN INVITE ↗</button>
+  </form>
+  <div class="invite-form-status" aria-live="polite"></div>
+</div>
+</div>
     <h2 class="display">Curious is enough.</h2>
     <p>Think & Gather is for people who like learning things they have no practical reason to know. People who ask follow-up questions. People who miss dinner tables where everyone forgets what time it is.</p>
     <p>You do not need the right résumé, the right vocabulary, or the right opinion. You just need to come willing to take part.</p>
@@ -1741,6 +1773,34 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   });
 });
+</script>
+
+
+<script>
+(function(){
+  document.querySelectorAll('.invite-request-form').forEach(function(form){
+    const status=form.nextElementSibling;
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      const button=form.querySelector('button[type="submit"]');
+      const original=button.textContent;
+      button.disabled=true; button.textContent='SENDING…';
+      try{
+        const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+        if(response.ok){
+          form.reset();
+          status.className='invite-form-status success';
+          status.textContent='Thank you. Your invitation request has been received.';
+        }else throw new Error();
+      }catch(e){
+        status.className='invite-form-status error';
+        status.textContent='Something went wrong. Please try again.';
+      }finally{
+        button.disabled=false; button.textContent=original;
+      }
+    });
+  });
+})();
 </script>
 
 </body>
