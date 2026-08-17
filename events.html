@@ -2657,7 +2657,6 @@ main > section:first-of-type {
   }
 }
 </style>
-
 <style id="v12-final-gatherings-fixes">
 /* Force event title rows to be left-aligned */
 .event-head, .gathering-head,
@@ -2716,7 +2715,6 @@ section:has(h1) h1, section:has(h2) h2, section:has(h3) h3 {
   max-height:none;
 }
 </style>
-
 <style>
 .v12-phones-section{
   min-height:0!important;
@@ -2742,6 +2740,58 @@ section:has(h1) h1, section:has(h2) h2, section:has(h3) h3 {
  .v12-phones-section h1,.v12-phones-section h2,.v12-phones-section h3{
    font-size:clamp(36px,11vw,52px)!important;
  }
+}
+</style>
+
+<style id="v13-left-title-fix">
+/* Keep the pre-museum design and anchor gathering titles to the left */
+.issue-divider{
+  display:grid!important;
+  grid-template-columns:110px minmax(0,1fr)!important;
+  align-items:stretch!important;
+}
+.issue-divider .num{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  text-align:left!important;
+  padding-left:22px!important;
+}
+.issue-divider .label{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  text-align:left!important;
+  padding-left:28px!important;
+  padding-right:20px!important;
+}
+.issue-divider .label h2,
+.issue-divider .event-chapter-title{
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  text-align:left!important;
+  justify-self:start!important;
+  transform:none!important;
+}
+/* keep separator simple and consistent */
+.issue-divider::before,
+.issue-divider::after,
+.issue-divider .label::before,
+.issue-divider .label::after{
+  display:none!important;
+  content:none!important;
+}
+@media(max-width:800px){
+  .issue-divider{
+    grid-template-columns:54px minmax(0,1fr)!important;
+  }
+  .issue-divider .num{
+    padding-left:10px!important;
+  }
+  .issue-divider .label{
+    padding-left:14px!important;
+  }
 }
 </style>
 </head>
