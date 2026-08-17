@@ -1,0 +1,12 @@
+For GitHub Pages, upload ALL files in this folder to the root of your repository.
+
+Important article files:
+- article-changing-your-mind.html
+- article-talking-to-strangers.html
+- article-in-defense-of-boredom.html
+- article-third-place.html
+- article-being-interesting.html
+- article-dinner-party.html
+
+There is NO articles subfolder in this version. This is intentional to prevent GitHub Pages 404s.
+Keep your existing CNAME file in GitHub.
