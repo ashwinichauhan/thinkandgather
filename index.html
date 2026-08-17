@@ -1178,6 +1178,174 @@ footer{
 }
 </style>
 
+
+<style>
+/* ===== Mobile refinement v3: compact editorial scale + question section ===== */
+@media (max-width: 900px){
+
+  /* General mobile rhythm */
+  body{line-height:1.45}
+  section{scroll-margin-top:72px}
+  .micro{font-size:9px!important;letter-spacing:.14em!important}
+
+  /* Make large display typography feel intentional, not oversized */
+  .display{letter-spacing:-.035em!important}
+  .cover h1{font-size:42px!important;line-height:.92!important}
+  .phones-headline{font-size:44px!important;line-height:.9!important}
+  .next-content h3{font-size:40px!important;line-height:.92!important}
+  .season-intro h3{font-size:39px!important;line-height:.94!important}
+  .reading-copy h3,.corr-copy h3{font-size:39px!important;line-height:.94!important}
+  .closing h3{font-size:42px!important;line-height:.92!important}
+  .events-cover-copy h1{font-size:46px!important;line-height:.9!important}
+  .gathering-copy h3{font-size:36px!important;line-height:.94!important}
+  .about-hero-copy h1{font-size:46px!important;line-height:.9!important}
+  .about-title h2,.about-why-copy h2,.about-end-copy h2,.principles-head h2{font-size:38px!important;line-height:.95!important}
+  .reading-frame h1{font-size:46px!important;line-height:.9!important}
+  .reading-intro h2,.reading-note h2{font-size:38px!important;line-height:.95!important}
+
+  /* Tighter side padding */
+  .next-content,.season-intro,.events,.reading-copy,.corr-copy,
+  .gathering-copy,.about-title,.about-copy,.about-why-copy,.about-end-copy,
+  .principles,.reading-index,.reading-note,.phones-main,
+  .events-cover-copy,.about-hero-copy{
+    padding-left:12px!important;
+    padding-right:12px!important;
+  }
+
+  /* HOME SEASON LIST — rebalance columns */
+  .event-head{
+    grid-template-columns:30px 58px minmax(0,1fr) 22px!important;
+    gap:8px!important;
+    align-items:start!important;
+    padding:18px 0!important;
+  }
+  .event-head h4{
+    font-size:22px!important;
+    line-height:1.05!important;
+  }
+  .event-head > div:nth-child(1),
+  .event-head > div:nth-child(2){
+    font-size:11px!important;
+  }
+  .event-body-inner{
+    padding:0 0 20px 96px!important;
+    width:100%!important;
+  }
+  .event-body-inner p{
+    font-size:15px!important;
+    line-height:1.52!important;
+    max-width:none!important;
+  }
+
+  /* QUESTION SECTION */
+  #question,
+  .reader-q{
+    min-height:0!important;
+    border-left:0!important;
+    border-right:0!important;
+  }
+  #question .section-marker,
+  .reader-q .section-marker{
+    margin:0!important;
+  }
+  .reader-grid{
+    display:block!important;
+    grid-template-columns:1fr!important;
+    min-height:0!important;
+  }
+  .reader-copy{
+    padding:46px 14px 50px!important;
+    width:100%!important;
+  }
+  .reader-copy > .micro{
+    margin-bottom:18px!important;
+  }
+  .reader-copy h3{
+    font-size:40px!important;
+    line-height:.92!important;
+    max-width:none!important;
+    margin:0 0 28px!important;
+    letter-spacing:-.04em!important;
+  }
+  .choice-row{
+    display:grid!important;
+    grid-template-columns:1fr 28px 1fr!important;
+    gap:10px!important;
+    align-items:end!important;
+    margin-top:14px!important;
+  }
+  .choice{
+    font-size:28px!important;
+    line-height:1!important;
+    padding:0 0 10px!important;
+  }
+  .choice-row .or,
+  .choice-row > span:not(.choice){
+    font-size:10px!important;
+    align-self:center!important;
+    text-align:center!important;
+  }
+  .result{
+    border-left:0!important;
+    border-top:1px solid rgba(244,240,232,.18)!important;
+    padding:42px 14px 48px!important;
+    min-height:0!important;
+  }
+  .result h4,
+  .result .display{
+    font-size:38px!important;
+    line-height:.94!important;
+    margin:10px 0 20px!important;
+  }
+  .result p{
+    font-size:16px!important;
+    line-height:1.5!important;
+    max-width:none!important;
+  }
+  .result .micro{
+    margin-bottom:10px!important;
+  }
+
+  /* If the question heading is a generic h3 elsewhere */
+  #question h3.display{
+    font-size:40px!important;
+    line-height:.92!important;
+  }
+
+  /* Gatherings page body text should use full width */
+  .gathering-copy{
+    padding-top:36px!important;
+    padding-bottom:42px!important;
+  }
+  .gathering-copy p{
+    font-size:15px!important;
+    line-height:1.55!important;
+    width:100%!important;
+    max-width:none!important;
+  }
+  .gathering-copy .tagline{
+    font-size:18px!important;
+    line-height:1.25!important;
+  }
+
+  /* Less dead vertical space between sections */
+  .season-intro{padding-top:42px!important;padding-bottom:20px!important}
+  .reading-copy,.corr-copy{padding-top:42px!important;padding-bottom:46px!important}
+  .closing{padding-top:56px!important;padding-bottom:56px!important;min-height:0!important}
+}
+
+@media (max-width: 430px){
+  .cover h1{font-size:40px!important}
+  .next-content h3{font-size:38px!important}
+  .season-intro h3{font-size:36px!important}
+  .reader-copy h3,#question h3.display{font-size:37px!important}
+  .choice{font-size:25px!important}
+  .result h4,.result .display{font-size:34px!important}
+  .gathering-copy h3{font-size:34px!important}
+  .event-head h4{font-size:21px!important}
+}
+</style>
+
 </head>
 <body>
 
