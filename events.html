@@ -606,6 +606,701 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 }
 </style>
 
+
+<style>
+/* ===== Mobile layout refinement ===== */
+@media (max-width: 900px){
+  html, body{overflow-x:hidden}
+  body{font-size:16px}
+  .shell{width:100%;max-width:100%;margin:0 auto}
+
+  /* NAV */
+  .nav-inner{padding:14px 18px!important}
+  .wordmark-think{font-size:24px!important}
+  .wordmark-gather{font-size:22px!important}
+  .menu-btn{font-size:26px!important;padding:6px 0 6px 12px!important}
+  .nav-links{padding:12px 20px 18px!important}
+  .nav-links a{padding:14px 0!important;font-size:14px!important}
+
+  /* GLOBAL SECTIONS */
+  section{overflow:hidden}
+  .section-marker{
+    grid-template-columns:58px 1fr!important;
+    margin:0!important;
+  }
+  .section-marker .num{
+    padding:16px 14px!important;
+    font-size:24px!important;
+  }
+  .section-marker .name{
+    padding:16px 18px!important;
+  }
+  .section-marker h2{
+    font-size:14px!important;
+    line-height:1.25!important;
+  }
+  .section-marker p{
+    font-size:10px!important;
+    line-height:1.4!important;
+    margin-top:5px!important;
+  }
+
+  /* HOME HERO */
+  .cover{padding:72px 10px 28px!important}
+  .cover-grid{
+    border-radius:16px!important;
+    padding:8px 8px 0!important;
+  }
+  .cover-photo{
+    height:64vh!important;
+    min-height:500px!important;
+  }
+  .cover-copy{
+    top:130px!important;
+    width:calc(100% - 38px)!important;
+  }
+  .cover h1{
+    font-size:clamp(58px,19vw,92px)!important;
+    line-height:.82!important;
+    white-space:normal!important;
+    letter-spacing:-.055em!important;
+  }
+  .cover-kicker{top:-48px!important;font-size:9px!important}
+  .cover-deck{
+    top:300px!important;
+    left:2px!important;
+    width:min(84vw,330px)!important;
+    font-size:14px!important;
+    line-height:1.45!important;
+  }
+  .issue-link{
+    top:430px!important;
+    left:2px!important;
+    font-size:9px!important;
+    padding:9px 13px!important;
+  }
+
+  /* PHONES DOWN */
+  .phones-frame{
+    grid-template-columns:56px 1fr!important;
+    min-height:0!important;
+  }
+  .phones-index{
+    padding:28px 12px!important;
+  }
+  .phones-index .micro{
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-size:8px!important;
+  }
+  .phones-number{font-size:30px!important}
+  .phones-main{
+    padding:48px 22px 54px!important;
+    grid-template-columns:1fr!important;
+    row-gap:26px!important;
+  }
+  .phones-headline{
+    font-size:clamp(56px,17vw,82px)!important;
+    line-height:.82!important;
+  }
+  .phones-main p{
+    font-size:16px!important;
+    line-height:1.6!important;
+    margin:0!important;
+  }
+  .phones-note{
+    margin-top:6px!important;
+    font-size:29px!important;
+  }
+
+  /* NEXT GATHERING */
+  .next-grid{
+    display:flex!important;
+    flex-direction:column!important;
+    border-left:0!important;
+    border-right:0!important;
+    min-height:0!important;
+  }
+  .next-image{
+    min-height:0!important;
+    height:auto!important;
+  }
+  .next-image img{
+    height:auto!important;
+    aspect-ratio:4/5;
+    object-fit:cover!important;
+  }
+  .next-content{
+    padding:48px 22px 58px!important;
+  }
+  .next-content h3{
+    font-size:clamp(54px,16vw,78px)!important;
+    line-height:.84!important;
+    margin:14px 0 22px!important;
+  }
+  .next-sub{
+    font-size:20px!important;
+    margin-bottom:26px!important;
+  }
+  .meta-strip{
+    gap:12px!important;
+    padding:14px 0!important;
+    margin-bottom:28px!important;
+  }
+  .meta-strip span{font-size:10px!important}
+  .next-detail-grid{
+    grid-template-columns:1fr!important;
+    gap:30px!important;
+  }
+
+  /* SEASON / EVENT LIST ON HOME */
+  .season-intro{
+    padding:52px 22px 28px!important;
+    border-left:0!important;
+    border-right:0!important;
+  }
+  .season-intro h3{
+    font-size:clamp(52px,15vw,74px)!important;
+    line-height:.86!important;
+  }
+  .season-intro p{
+    font-size:16px!important;
+    line-height:1.55!important;
+  }
+  .events{
+    padding:0 22px 64px!important;
+    border-left:0!important;
+    border-right:0!important;
+  }
+  .event-head{
+    grid-template-columns:42px 64px 1fr 28px!important;
+    gap:10px!important;
+    padding:22px 0!important;
+  }
+  .event-head h4{
+    font-size:24px!important;
+    line-height:1.05!important;
+  }
+  .event-body-inner{
+    grid-template-columns:1fr!important;
+    padding:0 0 24px 106px!important;
+    gap:12px!important;
+  }
+
+  /* READING ROOM SECTION ON HOME */
+  .reading-grid{
+    grid-template-columns:1fr!important;
+    min-height:0!important;
+  }
+  .reading-grid > div:first-child{
+    min-height:0!important;
+  }
+  .reading-grid > div:first-child img{
+    height:auto!important;
+    aspect-ratio:4/5;
+    object-fit:cover!important;
+  }
+  .reading-copy{
+    padding:50px 22px 58px!important;
+  }
+  .reading-copy h3{
+    font-size:clamp(50px,15vw,72px)!important;
+    line-height:.86!important;
+  }
+  .article-list li{
+    font-size:22px!important;
+    line-height:1.15!important;
+    padding:16px 0!important;
+  }
+
+  /* REQUEST INVITE */
+  .corr-grid{
+    grid-template-columns:1fr!important;
+    min-height:0!important;
+  }
+  .corr-copy{
+    order:1!important;
+    padding:48px 22px 42px!important;
+  }
+  .corr-grid > div:first-child{
+    order:2!important;
+  }
+  .corr-grid > div:first-child img{
+    height:auto!important;
+    aspect-ratio:4/5;
+    object-fit:cover!important;
+  }
+  .corr-copy h3{
+    font-size:clamp(50px,14vw,70px)!important;
+    line-height:.88!important;
+  }
+  .corr-copy p{
+    font-size:17px!important;
+    line-height:1.55!important;
+  }
+  .form{
+    flex-direction:column!important;
+    gap:18px!important;
+  }
+  .form input,.form button{
+    width:100%!important;
+    padding:12px 0!important;
+  }
+
+  /* CLOSING */
+  .closing{
+    min-height:58vh!important;
+    padding:70px 22px!important;
+  }
+  .closing h3{
+    font-size:clamp(58px,16vw,82px)!important;
+    line-height:.84!important;
+  }
+  .closing p{font-size:19px!important}
+
+  /* GATHERINGS PAGE HERO */
+  .events-cover{
+    padding:72px 10px 0!important;
+  }
+  .events-frame{
+    border-radius:16px!important;
+    min-height:0!important;
+  }
+  .events-cover-image{
+    min-height:500px!important;
+    height:64vh!important;
+  }
+  .events-cover-copy{
+    padding:70px 22px 28px!important;
+  }
+  .events-cover-copy h1{
+    font-size:clamp(66px,19vw,96px)!important;
+    line-height:.8!important;
+  }
+  .events-cover-copy .deck{
+    width:100%!important;
+    max-width:340px!important;
+    font-size:15px!important;
+    line-height:1.5!important;
+  }
+  .events-cover-meta{
+    display:block!important;
+  }
+
+  /* INDIVIDUAL EVENT SECTIONS */
+  .issue-divider{
+    grid-template-columns:62px 1fr!important;
+  }
+  .issue-divider .num{
+    padding:18px 14px!important;
+    font-size:26px!important;
+  }
+  .issue-divider .label{
+    padding:18px!important;
+  }
+  .issue-divider .label h2{
+    font-size:10px!important;
+  }
+  .gathering-feature,
+  .gathering-feature.reverse{
+    grid-template-columns:1fr!important;
+    border-left:0!important;
+    border-right:0!important;
+    min-height:0!important;
+  }
+  .gathering-feature.reverse .gathering-visual,
+  .gathering-feature.reverse .gathering-copy{
+    order:initial!important;
+  }
+  .gathering-visual{
+    min-height:0!important;
+    height:auto!important;
+  }
+  .gathering-visual img{
+    min-height:0!important;
+    height:auto!important;
+    width:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:contain!important;
+    background:#160c09;
+  }
+  .gathering-copy{
+    padding:46px 22px 54px!important;
+  }
+  .gathering-copy h3{
+    font-size:clamp(52px,15vw,76px)!important;
+    line-height:.84!important;
+    margin:14px 0 18px!important;
+  }
+  .gathering-copy .tagline{
+    font-size:21px!important;
+    margin-bottom:22px!important;
+  }
+  .gathering-copy p{
+    font-size:16px!important;
+    line-height:1.58!important;
+  }
+  .gathering-list li{
+    grid-template-columns:32px 1fr!important;
+    font-size:15px!important;
+    padding:11px 0!important;
+  }
+  .event-primary-cta{
+    margin-top:26px!important;
+  }
+  .event-more.open{
+    margin-top:22px!important;
+    padding-top:20px!important;
+  }
+  .event-more h4{
+    font-size:27px!important;
+    margin:30px 0 14px!important;
+  }
+  .event-more p{
+    font-size:16px!important;
+  }
+  .timeline-row{
+    grid-template-columns:74px 1fr!important;
+    gap:14px!important;
+    padding:13px 0!important;
+  }
+  .timeline-row .desc{
+    font-size:15px!important;
+  }
+
+  /* ABOUT PAGE */
+  .about-hero{
+    padding:72px 10px 0!important;
+  }
+  .about-frame{
+    border-radius:16px!important;
+    height:64vh!important;
+    min-height:500px!important;
+  }
+  .about-hero-copy{
+    padding:72px 22px 30px!important;
+  }
+  .about-hero-copy h1{
+    font-size:clamp(62px,18vw,90px)!important;
+    line-height:.8!important;
+  }
+  .about-hero-copy p{
+    max-width:330px!important;
+    font-size:15px!important;
+    line-height:1.5!important;
+  }
+  .about-spread,.about-why,.about-end{
+    grid-template-columns:1fr!important;
+    min-height:0!important;
+    border-left:0!important;
+    border-right:0!important;
+  }
+  .about-title{
+    padding:50px 22px!important;
+    border-right:0!important;
+  }
+  .about-title h2{
+    font-size:clamp(54px,16vw,78px)!important;
+  }
+  .about-copy,.about-why-copy,.about-end-copy{
+    padding:50px 22px!important;
+  }
+  .about-copy p,.about-why-copy p,.about-end-copy p{
+    font-size:17px!important;
+    line-height:1.65!important;
+  }
+  .about-copy p.lead{
+    font-size:23px!important;
+  }
+  .about-why-image img,.about-end-image img{
+    height:auto!important;
+    width:100%!important;
+    object-fit:contain!important;
+  }
+  .about-why-copy h2,.about-end-copy h2{
+    font-size:clamp(54px,16vw,78px)!important;
+  }
+  .principles{
+    padding:64px 22px!important;
+    border-left:0!important;
+    border-right:0!important;
+  }
+  .principles-head{
+    grid-template-columns:1fr!important;
+    gap:30px!important;
+    margin-bottom:42px!important;
+  }
+  .principles-head h2{
+    font-size:clamp(54px,16vw,78px)!important;
+  }
+  .principle-row{
+    grid-template-columns:36px 1fr!important;
+    gap:12px!important;
+    padding:22px 0!important;
+  }
+  .principle-row h3{
+    font-size:24px!important;
+  }
+  .principle-row p{
+    grid-column:2!important;
+    font-size:15px!important;
+  }
+
+  /* READING ROOM PAGE */
+  .reading-hero{
+    padding:72px 10px 0!important;
+  }
+  .reading-frame{
+    min-height:58vh!important;
+    border-radius:16px!important;
+    padding:76px 22px 36px!important;
+  }
+  .reading-frame h1{
+    font-size:clamp(62px,18vw,90px)!important;
+  }
+  .reading-deck{
+    font-size:16px!important;
+  }
+  .reading-index{
+    padding:60px 22px 72px!important;
+    border-left:0!important;
+    border-right:0!important;
+  }
+  .reading-intro{
+    grid-template-columns:1fr!important;
+    gap:26px!important;
+    margin-bottom:48px!important;
+  }
+  .reading-intro h2{
+    font-size:clamp(54px,16vw,78px)!important;
+  }
+  .article-row{
+    grid-template-columns:36px 1fr 24px!important;
+    gap:12px!important;
+    padding:22px 0!important;
+  }
+  .article-row h3{
+    font-size:25px!important;
+  }
+  .article-row p{
+    grid-column:2!important;
+    font-size:15px!important;
+  }
+  .reading-note{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    padding:60px 22px!important;
+    border-left:0!important;
+    border-right:0!important;
+  }
+  .reading-note h2{
+    font-size:clamp(52px,15vw,74px)!important;
+  }
+
+  /* FOOTER */
+  footer{
+    padding:24px 20px!important;
+    gap:10px!important;
+    font-size:9px!important;
+    line-height:1.5!important;
+  }
+}
+
+/* Extra-small phones */
+@media (max-width: 430px){
+  .cover-photo,.events-cover-image,.about-frame{min-height:460px!important}
+  .cover-deck{top:285px!important}
+  .issue-link{top:415px!important}
+  .next-content h3,.gathering-copy h3{font-size:52px!important}
+  .article-list li{font-size:20px!important}
+}
+</style>
+
+
+<style>
+/* ===== Mobile refinement v2: smaller titles + fuller text width ===== */
+@media (max-width: 900px){
+
+  /* Reduce side gutters across text-heavy sections */
+  .nav-inner{padding-left:14px!important;padding-right:14px!important}
+  .cover{padding-left:6px!important;padding-right:6px!important}
+  .events-cover,.about-hero,.reading-hero{padding-left:6px!important;padding-right:6px!important}
+
+  .next-content,
+  .season-intro,
+  .events,
+  .reading-copy,
+  .corr-copy,
+  .gathering-copy,
+  .about-title,
+  .about-copy,
+  .about-why-copy,
+  .about-end-copy,
+  .principles,
+  .reading-index,
+  .reading-note{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+
+  .phones-main{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+
+  .events-cover-copy,
+  .about-hero-copy{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+
+  /* Let text use more of the viewport */
+  .cover-copy{
+    width:calc(100% - 22px)!important;
+  }
+  .cover-deck,
+  .events-cover-copy .deck,
+  .about-hero-copy p{
+    max-width:none!important;
+    width:94%!important;
+  }
+
+  /* Smaller homepage titles */
+  .cover h1{
+    font-size:clamp(48px,15vw,72px)!important;
+    line-height:.88!important;
+  }
+  .phones-headline{
+    font-size:clamp(46px,14vw,66px)!important;
+    line-height:.86!important;
+  }
+  .next-content h3{
+    font-size:clamp(44px,13vw,64px)!important;
+    line-height:.88!important;
+  }
+  .season-intro h3{
+    font-size:clamp(42px,12.5vw,60px)!important;
+    line-height:.9!important;
+  }
+  .reading-copy h3,
+  .corr-copy h3{
+    font-size:clamp(42px,12.5vw,60px)!important;
+    line-height:.9!important;
+  }
+  .closing h3{
+    font-size:clamp(46px,13.5vw,66px)!important;
+    line-height:.88!important;
+  }
+
+  /* Smaller Gatherings page titles */
+  .events-cover-copy h1{
+    font-size:clamp(52px,15vw,76px)!important;
+    line-height:.86!important;
+  }
+  .gathering-copy h3{
+    font-size:clamp(40px,12vw,58px)!important;
+    line-height:.9!important;
+  }
+  .gathering-copy .tagline{
+    font-size:19px!important;
+  }
+
+  /* Smaller About page titles */
+  .about-hero-copy h1{
+    font-size:clamp(50px,14.5vw,72px)!important;
+    line-height:.86!important;
+  }
+  .about-title h2,
+  .about-why-copy h2,
+  .about-end-copy h2,
+  .principles-head h2{
+    font-size:clamp(42px,12.5vw,60px)!important;
+    line-height:.9!important;
+  }
+
+  /* Smaller Reading Room titles */
+  .reading-frame h1{
+    font-size:clamp(50px,14.5vw,72px)!important;
+    line-height:.86!important;
+  }
+  .reading-intro h2,
+  .reading-note h2{
+    font-size:clamp(42px,12.5vw,60px)!important;
+    line-height:.9!important;
+  }
+
+  /* Denser body copy / less blank side space */
+  .next-content p,
+  .season-intro p,
+  .reading-copy p,
+  .corr-copy p,
+  .gathering-copy p,
+  .about-copy p,
+  .about-why-copy p,
+  .about-end-copy p,
+  .principles-head p,
+  .reading-intro p,
+  .reading-note p{
+    max-width:none!important;
+    width:100%!important;
+  }
+
+  /* Keep section markers compact */
+  .section-marker{
+    grid-template-columns:50px 1fr!important;
+  }
+  .section-marker .num{
+    padding-left:10px!important;
+    padding-right:10px!important;
+  }
+  .section-marker .name{
+    padding-left:12px!important;
+    padding-right:12px!important;
+  }
+
+  /* Slightly tighter event dividers */
+  .issue-divider{
+    grid-template-columns:54px 1fr!important;
+  }
+  .issue-divider .num{
+    padding-left:10px!important;
+    padding-right:10px!important;
+  }
+  .issue-divider .label{
+    padding-left:12px!important;
+    padding-right:12px!important;
+  }
+}
+
+@media (max-width: 430px){
+  .next-content,
+  .season-intro,
+  .events,
+  .reading-copy,
+  .corr-copy,
+  .gathering-copy,
+  .about-title,
+  .about-copy,
+  .about-why-copy,
+  .about-end-copy,
+  .principles,
+  .reading-index,
+  .reading-note,
+  .phones-main,
+  .events-cover-copy,
+  .about-hero-copy{
+    padding-left:14px!important;
+    padding-right:14px!important;
+  }
+
+  .cover h1{font-size:46px!important}
+  .next-content h3{font-size:42px!important}
+  .gathering-copy h3{font-size:38px!important}
+  .about-hero-copy h1,
+  .reading-frame h1{font-size:48px!important}
+}
+</style>
+
 </head>
 <body>
 <nav class="nav">
