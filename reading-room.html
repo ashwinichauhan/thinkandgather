@@ -1,7 +1,8 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Reading Room — Think & Gather</title>
-<meta name="description" content="Essays, ideas, and questions from Think & Gather.">
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>The Reading Room — Think &amp; Gather</title>
+<meta content="Essays, ideas, and questions from Think &amp; Gather." name="description"/>
 <style>
 :root{
   --chocolate:#160c09;
@@ -72,8 +73,6 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
   .nav-links a:last-child{border-bottom:0}
 }
 </style>
-
-
 <style>
 /* ===== Mobile layout refinement ===== */
 @media (max-width: 900px){
@@ -582,8 +581,6 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
   .article-list li{font-size:20px!important}
 }
 </style>
-
-
 <style>
 /* ===== Mobile refinement v2: smaller titles + fuller text width ===== */
 @media (max-width: 900px){
@@ -767,8 +764,6 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
   .reading-frame h1{font-size:48px!important}
 }
 </style>
-
-
 <style>
 /* ===== Mobile refinement v3: compact editorial scale + question section ===== */
 @media (max-width: 900px){
@@ -935,8 +930,6 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
   .event-head h4{font-size:21px!important}
 }
 </style>
-
-
 <style>
 /* ===== Stronger event separation + smaller mobile images ===== */
 
@@ -1068,8 +1061,6 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
   }
 }
 </style>
-
-
 <style>
 /* ===== Event separation v5: one background, editorial dividers ===== */
 
@@ -1212,72 +1203,193 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
   }
 }
 </style>
-
+<style>
+/* ===== Horizontal Instagram footer ===== */
+.instagram-strip{
+  background:#160c09;
+  color:#efe3d5;
+  border-top:1px solid rgba(239,227,213,.26);
+  padding:58px 24px 38px;
+}
+.instagram-strip-head{
+  max-width:1180px;
+  margin:0 auto 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:40px;
+}
+.instagram-strip-kicker{
+  color:#a99788;
+  font-size:10px;
+  letter-spacing:.2em;
+  margin-bottom:12px;
+}
+.instagram-strip-head h2{
+  margin:0;
+  font:400 clamp(38px,4vw,62px)/.95 Georgia,"Times New Roman",serif;
+  letter-spacing:-.04em;
+}
+.instagram-strip-head > a,
+.instagram-strip-foot a{
+  color:#efe3d5;
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:.14em;
+  border-bottom:1px solid rgba(239,227,213,.55);
+  padding-bottom:6px;
+  white-space:nowrap;
+}
+.instagram-photo-row{
+  max-width:1180px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+.instagram-photo-cell{
+  display:block;
+  height:220px;
+  overflow:hidden;
+  background:#21120e;
+}
+.instagram-photo-cell img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .45s ease, opacity .45s ease;
+}
+.instagram-photo-cell:hover img{
+  transform:scale(1.025);
+  opacity:.88;
+}
+.instagram-strip-foot{
+  max-width:1180px;
+  margin:20px auto 0;
+  padding-top:16px;
+  border-top:1px solid rgba(239,227,213,.13);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  color:#8f8075;
+  font-size:9px;
+  letter-spacing:.16em;
+}
+@media(max-width:800px){
+  .instagram-strip{padding:44px 14px 30px}
+  .instagram-strip-head{display:block;margin-bottom:22px}
+  .instagram-strip-head h2{font-size:34px;margin-bottom:18px}
+  .instagram-photo-row{
+    display:flex;
+    overflow-x:auto;
+    gap:8px;
+    scroll-snap-type:x mandatory;
+    padding-bottom:4px;
+  }
+  .instagram-photo-cell{
+    flex:0 0 58%;
+    height:180px;
+    scroll-snap-align:start;
+  }
+  .instagram-strip-foot{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+</style>
 </head><body>
 <nav class="nav">
- <div class="nav-inner shell">
-   <a href="index.html" class="logo-nav" aria-label="Think & Gather home">
-     <span class="wordmark-think">Think &</span><span class="wordmark-gather">GATHER</span>
-   </a>
-   <div class="nav-links">
-     <a href="index.html">Home</a>
-     <a href="events.html">Gatherings</a>
-     <a href="about.html">About Us</a>
-     <a href="reading-room.html">The Reading Room</a>
-   </div>
-   <button class="menu-btn" aria-label="Menu">☰</button>
- </div>
+<div class="nav-inner shell">
+<a aria-label="Think &amp; Gather home" class="logo-nav" href="index.html">
+<span class="wordmark-think">Think &amp;</span><span class="wordmark-gather">GATHER</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="events.html">Gatherings</a>
+<a href="about.html">About Us</a>
+<a href="reading-room.html">The Reading Room</a>
+</div>
+<button aria-label="Menu" class="menu-btn">☰</button>
+</div>
 </nav>
 <main>
 <section class="reading-hero"><div class="reading-frame">
-  <div class="micro">Think & Gather · The Reading Room</div>
-  <h1 class="display">Something to<br>think about.</h1>
-  <div class="reading-deck">Essays for the space between gatherings. Conversation, curiosity, attention, social life — and the occasional argument we haven’t finished yet.</div>
+<div class="micro">Think &amp; Gather · The Reading Room</div>
+<h1 class="display">Something to<br/>think about.</h1>
+<div class="reading-deck">Essays for the space between gatherings. Conversation, curiosity, attention, social life — and the occasional argument we haven’t finished yet.</div>
 </div></section>
 <section class="reading-index">
- <div class="reading-intro">
-   <h2 class="display">Read slowly.<br>Disagree freely.</h2>
-   <p>This is not a content feed. There is no infinite scroll and no pressure to keep up. Read something because the question interests you. Send it to someone because you want to argue about it.</p>
- </div>
- <a class="article-row" href="/article-changing-your-mind.html">
-      <span class="micro">01</span>
-      <h3>The Case for Changing Your Mind</h3>
-      <p>Changing your mind has a branding problem. We treat certainty like strength, even when the more interesting skill is knowing when a belief has earned a revision.</p>
-      <span class="arrow">↗</span>
-    </a><a class="article-row" href="/article-talking-to-strangers.html">
-      <span class="micro">02</span>
-      <h3>Why We Don’t Know How to Talk to Strangers Anymore</h3>
-      <p>We say we want community, then spend most public moments making ourselves unavailable to it.</p>
-      <span class="arrow">↗</span>
-    </a><a class="article-row" href="/article-in-defense-of-boredom.html">
-      <span class="micro">03</span>
-      <h3>In Defense of Boredom</h3>
-      <p>Boredom is uncomfortable partly because it removes the usual escape route. That may be exactly why it is worth protecting.</p>
-      <span class="arrow">↗</span>
-    </a><a class="article-row" href="/article-third-place.html">
-      <span class="micro">04</span>
-      <h3>Whatever Happened to the Third Place?</h3>
-      <p>Home is private. Work is productive. We still need somewhere that asks almost nothing of us except that we show up.</p>
-      <span class="arrow">↗</span>
-    </a><a class="article-row" href="/article-being-interesting.html">
-      <span class="micro">05</span>
-      <h3>Is Being Interesting a Skill?</h3>
-      <p>The most interesting person in the room may not be the person with the best stories. It may be the person who makes everyone else more interesting.</p>
-      <span class="arrow">↗</span>
-    </a><a class="article-row" href="/article-dinner-party.html">
-      <span class="micro">06</span>
-      <h3>The Death of the Dinner Party</h3>
-      <p>The dinner party does something modern social life is increasingly bad at: it gives people a reason to stay in the same room long enough for the conversation to change.</p>
-      <span class="arrow">↗</span>
-    </a>
+<div class="reading-intro">
+<h2 class="display">Read slowly.<br/>Disagree freely.</h2>
+<p>Read because the question interests you. Send something to a friend because you want to argue about it. Bring the idea back to the room.</p>
+</div>
+<a class="article-row" href="/article-changing-your-mind.html">
+<span class="micro">01</span>
+<h3>The Case for Changing Your Mind</h3>
+<p>Changing your mind has a branding problem. We treat certainty like strength, even when the more interesting skill is knowing when a belief has earned a revision.</p>
+<span class="arrow">↗</span>
+</a><a class="article-row" href="/article-talking-to-strangers.html">
+<span class="micro">02</span>
+<h3>Why We Don’t Know How to Talk to Strangers Anymore</h3>
+<p>We say we want community, then spend most public moments making ourselves unavailable to it.</p>
+<span class="arrow">↗</span>
+</a><a class="article-row" href="/article-in-defense-of-boredom.html">
+<span class="micro">03</span>
+<h3>In Defense of Boredom</h3>
+<p>Boredom is uncomfortable partly because it removes the usual escape route. That may be exactly why it is worth protecting.</p>
+<span class="arrow">↗</span>
+</a><a class="article-row" href="/article-third-place.html">
+<span class="micro">04</span>
+<h3>Whatever Happened to the Third Place?</h3>
+<p>Home is private. Work is productive. We still need somewhere that asks almost nothing of us except that we show up.</p>
+<span class="arrow">↗</span>
+</a><a class="article-row" href="/article-being-interesting.html">
+<span class="micro">05</span>
+<h3>Is Being Interesting a Skill?</h3>
+<p>The most interesting person in the room may not be the person with the best stories. It may be the person who makes everyone else more interesting.</p>
+<span class="arrow">↗</span>
+</a><a class="article-row" href="/article-dinner-party.html">
+<span class="micro">06</span>
+<h3>The Death of the Dinner Party</h3>
+<p>The dinner party does something modern social life is increasingly bad at: it gives people a reason to stay in the same room long enough for the conversation to change.</p>
+<span class="arrow">↗</span>
+</a>
 </section>
 <section class="reading-note">
- <div class="micro">A NOTE FROM THE ROOM</div>
- <div><h2 class="display">The article is only the beginning.</h2><p>Bring the idea to a gathering. Question it over dinner. Change your mind halfway through. The Reading Room exists to give real conversations somewhere to start.</p></div>
+<div class="micro">A NOTE FROM THE ROOM</div>
+<div><h2 class="display">The article is only the beginning.</h2><p>Bring the idea to a gathering. Question it over dinner. Change your mind halfway through. The Reading Room exists to give real conversations somewhere to start.</p></div>
 </section>
 </main>
-<footer><span>Think & Gather · Miami, FL</span><span>The Reading Room</span><span>Until we gather again.</span></footer>
-
+<section aria-label="Think &amp; Gather on Instagram" class="instagram-strip">
+<div class="instagram-strip-head">
+<div>
+<div class="instagram-strip-kicker">LIVE FROM THE ROOM</div>
+<h2>Follow along between gatherings.</h2>
+</div>
+<a href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">@thinkandgather ↗</a>
+</div>
+<div class="instagram-photo-row">
+<a class="instagram-photo-cell" href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">
+<img alt="Think &amp; Gather gathering" src="home-hero-gathering.png"/>
+</a>
+<a class="instagram-photo-cell" href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">
+<img alt="Think &amp; Gather conversation" src="cups-conversation-cursive.png"/>
+</a>
+<a class="instagram-photo-cell" href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">
+<img alt="Think &amp; Gather reading room" src="reading-room-newspaper.png"/>
+</a>
+<a class="instagram-photo-cell" href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">
+<img alt="Think &amp; Gather invitation" src="invite-only-think-gather.png"/>
+</a>
+</div>
+<div class="instagram-strip-foot">
+<span>CONVERSATIONS · GATHERINGS · READING · MIAMI</span>
+<a href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">VIEW INSTAGRAM ↗</a>
+</div>
+</section>
+<footer><span>Think &amp; Gather · Miami, FL</span><span>The Reading Room</span><span>Until we gather again.</span></footer>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.nav').forEach(function(nav){
@@ -1303,5 +1415,4 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
-
 </body></html>
