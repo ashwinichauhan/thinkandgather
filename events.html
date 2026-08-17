@@ -1746,6 +1746,183 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 }
 </style>
 
+
+<style>
+/* ===== Gatherings v6: clearer editorial event chapters ===== */
+
+/* Keep one consistent background */
+.gathering-feature,
+.gathering-feature:nth-of-type(odd),
+.gathering-feature:nth-of-type(even){
+  background:#160c09!important;
+}
+
+/* Each event reads like a separate magazine chapter */
+.issue-divider{
+  margin-top:54px!important;
+  min-height:92px!important;
+  background:#160c09!important;
+  border-top:1px solid rgba(244,240,232,.62)!important;
+  border-bottom:1px solid rgba(244,240,232,.22)!important;
+  position:relative;
+}
+.issue-divider:before{
+  content:"";
+  position:absolute;
+  top:-5px;
+  left:0;
+  width:92px;
+  height:4px;
+  background:#efe3d5;
+}
+.issue-divider .num{
+  border-right:1px solid rgba(244,240,232,.24)!important;
+  font-size:34px!important;
+}
+.issue-divider .label{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:24px!important;
+}
+.issue-divider .label h2{
+  font-size:13px!important;
+  letter-spacing:.16em!important;
+  text-transform:uppercase!important;
+}
+.issue-divider .label span{
+  opacity:.68!important;
+}
+
+/* Make each event a contained editorial spread */
+.gathering-feature{
+  max-width:1180px!important;
+  margin:0 auto 28px!important;
+  padding:38px 0 70px!important;
+  border-bottom:1px solid rgba(244,240,232,.22)!important;
+  position:relative;
+}
+.gathering-feature:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  width:72px;
+  height:1px;
+  background:#efe3d5;
+}
+
+/* Give the text block stronger hierarchy */
+.gathering-copy{
+  position:relative;
+}
+.gathering-copy:before{
+  content:"";
+  display:block;
+  width:36px;
+  height:1px;
+  background:rgba(244,240,232,.55);
+  margin-bottom:22px;
+}
+.gathering-copy h3{
+  margin-top:0!important;
+}
+.gathering-copy .tagline{
+  max-width:34rem;
+}
+
+/* The button visually closes the section */
+.event-primary-cta{
+  margin-top:30px!important;
+  padding-top:10px!important;
+  border-top:1px solid rgba(244,240,232,.12)!important;
+}
+
+/* Mobile: distinct chapters without alternating background colors */
+@media (max-width:900px){
+  .issue-divider{
+    margin-top:34px!important;
+    min-height:72px!important;
+    grid-template-columns:54px 1fr!important;
+  }
+  .issue-divider:before{
+    width:58px;
+    height:3px;
+    top:-4px;
+  }
+  .issue-divider .num{
+    font-size:23px!important;
+    padding:16px 10px!important;
+  }
+  .issue-divider .label{
+    display:block!important;
+    padding:15px 14px!important;
+  }
+  .issue-divider .label h2{
+    font-size:10px!important;
+    margin-bottom:5px!important;
+  }
+
+  .gathering-feature{
+    width:calc(100% - 28px)!important;
+    margin:0 14px 34px!important;
+    padding:28px 0 48px!important;
+    border-bottom:1px solid rgba(244,240,232,.30)!important;
+  }
+
+  /* Smaller images, with visible space around them */
+  .gathering-visual{
+    width:58%!important;
+    max-width:220px!important;
+    margin:24px auto 14px!important;
+  }
+  .gathering-visual img{
+    width:100%!important;
+    height:auto!important;
+    max-height:250px!important;
+    object-fit:contain!important;
+    display:block!important;
+  }
+
+  .gathering-copy{
+    padding:24px 0 0!important;
+  }
+  .gathering-copy:before{
+    width:28px;
+    margin-bottom:16px;
+  }
+  .gathering-copy h3{
+    font-size:31px!important;
+    line-height:.96!important;
+    margin-bottom:14px!important;
+  }
+  .gathering-copy .tagline{
+    font-size:17px!important;
+    line-height:1.3!important;
+  }
+  .gathering-copy p{
+    font-size:15px!important;
+    line-height:1.55!important;
+  }
+  .event-primary-cta{
+    margin-top:22px!important;
+  }
+}
+
+@media (max-width:430px){
+  .gathering-visual{
+    width:54%!important;
+    max-width:200px!important;
+  }
+  .gathering-visual img{
+    max-height:225px!important;
+  }
+  .gathering-copy h3{
+    font-size:29px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav class="nav">
