@@ -2082,7 +2082,6 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
   }
 }
 </style>
-
 <style>
 /* FINAL GATHERINGS HERO — title only, no lead image */
 .events-cover{
@@ -2150,6 +2149,601 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
   }
 }
 </style>
+<style>
+/* ===== Think & Gather UI System v2 ===== */
+:root{
+  --tg-bg:#160c09;
+  --tg-bg-soft:#1d100c;
+  --tg-cream:#f3eadf;
+  --tg-muted:#b7a89b;
+  --tg-rule:rgba(243,234,223,.18);
+  --tg-rule-strong:rgba(243,234,223,.38);
+  --tg-gutter:clamp(18px,4vw,52px);
+  --tg-section:clamp(72px,8vw,112px);
+}
+html{scroll-behavior:smooth}
+body{background:var(--tg-bg);color:var(--tg-cream)}
+main > section:not(.cover):not(.events-cover):not(.about-hero):not(.reading-hero){
+  padding-top:var(--tg-section);
+  padding-bottom:var(--tg-section);
+}
+.display,h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+p{line-height:1.65}
+.micro,.event-meta-label,.month{
+  font-family:Arial,Helvetica,sans-serif!important;
+  text-transform:uppercase;
+  letter-spacing:.16em!important;
+}
+.cta,.talk-link,.instagram-live-link,.instagram-strip a,.more-details-btn{
+  font-family:Arial,Helvetica,sans-serif!important;
+  text-transform:uppercase;
+  letter-spacing:.14em!important;
+}
+
+/* one consistent primary and secondary CTA language */
+.primary-cta{
+  display:inline-flex!important;align-items:center;justify-content:center;
+  min-height:46px;padding:0 18px!important;border:1px solid rgba(243,234,223,.55)!important;
+  color:var(--tg-cream)!important;background:transparent!important;text-decoration:none!important;
+  font-size:10px!important;letter-spacing:.14em!important;
+}
+.secondary-cta{
+  display:inline-block;color:var(--tg-cream)!important;text-decoration:none!important;
+  font-size:10px!important;letter-spacing:.14em!important;padding-bottom:7px;
+  border-bottom:1px solid rgba(243,234,223,.58);
+}
+
+/* restrained image language */
+.gathering-visual img,.about-why-image img,.about-end-image img,
+.reading-grid img,.corr-image img,.talk-section-image img,.instagram-photo-cell img{
+  filter:saturate(.84) sepia(.05) brightness(.92);
+}
+
+/* subtle reveal */
+.reveal,.gathering-feature,.article-row,.principle-row{
+  opacity:0;transform:translateY(12px);
+  animation:tgReveal .65s ease forwards;
+}
+@keyframes tgReveal{to{opacity:1;transform:none}}
+
+/* full-screen mobile menu */
+.mobile-social-link{display:none}
+@media(max-width:900px){
+  .nav-links{
+    position:fixed!important;
+    inset:0!important;
+    top:0!important;
+    z-index:999!important;
+    background:rgba(22,12,9,.985)!important;
+    display:none!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+    align-items:flex-start!important;
+    padding:90px 28px 80px!important;
+    gap:0!important;
+  }
+  .nav-links.open{display:flex!important}
+  .nav-links a{
+    width:100%!important;
+    padding:15px 0!important;
+    border-bottom:1px solid var(--tg-rule)!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:34px!important;
+    line-height:1!important;
+    letter-spacing:-.02em!important;
+    text-transform:none!important;
+  }
+  .mobile-social-link{
+    display:block!important;
+    position:absolute;
+    left:28px;bottom:32px;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-size:10px!important;letter-spacing:.16em!important;
+    border:0!important;
+  }
+  .menu-btn{position:relative;z-index:1000!important}
+  main > section:not(.cover):not(.events-cover):not(.about-hero):not(.reading-hero){
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+}
+</style>
+<style>
+/* gatherings catalogue */
+.issue-divider{
+  min-height:138px!important;
+  margin-top:48px!important;
+  border-top:1px solid var(--tg-rule-strong)!important;
+  border-bottom:1px solid var(--tg-rule)!important;
+}
+.issue-divider .num{font-size:34px!important;padding:28px 24px!important}
+.issue-divider .label{display:flex!important;flex-direction:column!important;justify-content:center!important;padding:20px 30px!important}
+.event-chapter-month{font:9px Arial,sans-serif;letter-spacing:.18em;color:var(--tg-muted);margin-bottom:10px}
+.event-chapter-title{font-size:clamp(40px,5vw,68px)!important;line-height:.88!important;letter-spacing:-.045em!important;margin:0!important}
+.gathering-feature{padding-top:62px!important;padding-bottom:92px!important;border-bottom:0!important}
+.gathering-copy h3{font-size:clamp(52px,6vw,86px)!important;line-height:.86!important}
+.event-date-banner{margin-bottom:36px!important}
+.event-date-banner strong{font-size:25px!important}
+.details-bar-v2{
+  width:100%!important;display:flex!important;align-items:center!important;justify-content:space-between!important;
+  margin-top:34px!important;padding:18px 0!important;border:0!important;border-top:1px solid var(--tg-rule-strong)!important;border-bottom:1px solid var(--tg-rule)!important;
+  color:var(--tg-cream)!important;background:transparent!important;text-align:left!important;
+}
+.event-more{padding-top:34px!important}
+.detail-block-v2{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:24px 0;border-bottom:1px solid var(--tg-rule)}
+.detail-block-v2 h4{margin:0;font:10px Arial,sans-serif;letter-spacing:.16em;color:var(--tg-muted)}
+.detail-block-v2 p{margin:0;max-width:720px}
+.detail-block-v2 .gathering-list{margin:0!important}
+.gathering-visual{overflow:hidden}
+.gathering-visual img{transition:transform .5s ease}
+.gathering-visual:hover img{transform:scale(1.018)}
+@media(max-width:800px){
+ .issue-divider{min-height:94px!important;margin-top:28px!important;grid-template-columns:48px 1fr!important}
+ .issue-divider .num{font-size:20px!important;padding:18px 10px!important}
+ .issue-divider .label{padding:14px!important}
+ .event-chapter-title{font-size:30px!important}
+ .gathering-copy h3{font-size:38px!important}
+ .event-date-banner strong{font-size:17px!important}
+ .detail-block-v2{grid-template-columns:1fr;gap:10px;padding:20px 0}
+ .gathering-visual{width:60%!important;max-width:225px!important;margin:24px auto!important}
+ .gathering-visual img{max-height:250px!important;object-fit:contain!important}
+}
+</style>
+<style>
+/* ===== v4: tighter rhythm + intentional borders ===== */
+:root{
+  --tg-rule-soft:rgba(243,234,223,.13);
+  --tg-rule-mid:rgba(243,234,223,.22);
+  --tg-rule-strong:rgba(243,234,223,.34);
+}
+
+/* Remove decorative/redundant borders that create visual noise */
+main > section{
+  border-top:0!important;
+  border-bottom:0!important;
+}
+.section-marker,
+.issue-divider,
+.event-date-banner,
+.details-bar-v2,
+.article-row,
+.principle-row,
+.instagram-strip-foot{
+  border-color:var(--tg-rule-mid)!important;
+}
+
+/* Use a single separator system: one line at the START of a major section */
+.section-marker,
+.issue-divider{
+  border-top:1px solid var(--tg-rule-strong)!important;
+  border-bottom:0!important;
+}
+.section-marker::before,
+.section-marker::after,
+.issue-divider::before,
+.issue-divider::after{
+  box-shadow:none!important;
+}
+
+/* Content rows get only a bottom rule */
+.season-row-v2,
+.article-row,
+.principle-row,
+.detail-block-v2{
+  border-top:0!important;
+  border-bottom:1px solid var(--tg-rule-soft)!important;
+}
+
+/* No extra borders around section wrappers */
+.next-grid,
+.reading-grid,
+.corr-grid,
+.reader-grid,
+.about-spread,
+.about-why,
+.about-end,
+.gathering-feature{
+  border-top:0!important;
+  border-bottom:0!important;
+}
+</style>
+<style>
+/* ===== v5: condense gathering sections ===== */
+
+/* Reduce the big empty gap between chapter heading and content */
+.gathering-feature{
+  padding-top:28px!important;
+  padding-bottom:52px!important;
+  margin-bottom:18px!important;
+  max-width:1120px!important;
+}
+
+/* Pull image + copy closer together */
+.gathering-feature{
+  column-gap:34px!important;
+  row-gap:20px!important;
+}
+
+/* Smaller visual, less dead space */
+.gathering-visual{
+  width:100%!important;
+  max-width:420px!important;
+  margin:0!important;
+  align-self:start!important;
+}
+.gathering-visual img{
+  width:100%!important;
+  max-height:460px!important;
+  object-fit:cover!important;
+}
+
+/* Copy starts higher and stays compact */
+.gathering-copy{
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+.event-date-banner{
+  margin-top:0!important;
+  margin-bottom:22px!important;
+}
+.gathering-copy h3{
+  margin-top:0!important;
+  margin-bottom:14px!important;
+  font-size:clamp(44px,5vw,68px)!important;
+}
+.gathering-copy .tagline{
+  margin-bottom:18px!important;
+}
+.gathering-copy p{
+  margin-bottom:16px!important;
+}
+.details-bar-v2{
+  margin-top:20px!important;
+}
+
+/* Bring chapter divider closer to event body */
+.issue-divider{
+  margin-top:24px!important;
+  min-height:96px!important;
+}
+.issue-divider .label{
+  padding:16px 24px!important;
+}
+.issue-divider .num{
+  padding:20px 18px!important;
+}
+
+@media(max-width:800px){
+  .gathering-feature{
+    padding-top:18px!important;
+    padding-bottom:36px!important;
+    row-gap:12px!important;
+  }
+  .gathering-visual{
+    width:54%!important;
+    max-width:190px!important;
+    margin:10px auto 8px!important;
+  }
+  .gathering-visual img{
+    max-height:220px!important;
+    object-fit:contain!important;
+  }
+  .gathering-copy{
+    padding-top:8px!important;
+  }
+  .event-date-banner{
+    margin-bottom:18px!important;
+  }
+  .gathering-copy h3{
+    font-size:34px!important;
+  }
+  .issue-divider{
+    margin-top:18px!important;
+    min-height:82px!important;
+  }
+}
+</style>
+<style>
+/* ===== v6: ONE consistent rule thickness everywhere ===== */
+:root{
+  --tg-rule-color: rgba(243,234,223,.22);
+  --tg-rule-width: 1px;
+}
+
+/* All structural rules use exactly one thickness + one opacity */
+.section-marker,
+.issue-divider,
+.event-date-banner,
+.details-bar-v2,
+.season-row-v2,
+.article-row,
+.principle-row,
+.detail-block-v2,
+.instagram-strip-foot,
+.meta-strip,
+.choice,
+.result,
+.next-grid,
+.reading-grid,
+.corr-grid,
+.reader-grid,
+.about-spread,
+.about-why,
+.about-end,
+.gathering-feature,
+.events-frame,
+.events-cover,
+.talk-section-restored,
+.phones-compact-v2{
+  border-color:var(--tg-rule-color)!important;
+}
+
+/* Major section separators */
+.section-marker,
+.issue-divider{
+  border-top:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+  border-bottom:0!important;
+}
+
+/* Rows */
+.season-row-v2,
+.article-row,
+.principle-row,
+.detail-block-v2{
+  border-top:0!important;
+  border-bottom:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Date/time and expandable details */
+.event-date-banner,
+.details-bar-v2,
+.meta-strip{
+  border-top:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+  border-bottom:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Internal vertical dividers */
+.event-date-banner > * + *,
+.meta-strip > * + *{
+  border-left:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Remove decorative short strokes / pseudo rules that created thick accents */
+.section-marker::before,
+.section-marker::after,
+.issue-divider::before,
+.issue-divider::after,
+.gathering-copy::before,
+.gathering-copy::after,
+.events-frame::before,
+.events-frame::after{
+  display:none!important;
+  content:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+/* Remove old accent borders on chapter number/label cells */
+.issue-divider .num,
+.issue-divider .label,
+.section-marker .num,
+.section-marker .name{
+  border-width:0!important;
+  border-color:transparent!important;
+}
+
+/* Keep only a single clean divider between numeral and title */
+.issue-divider .num{
+  border-right:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Kill stray standalone ornamental line elements */
+.gathering-feature > .line,
+.gathering-copy > .line,
+.events-frame > .line,
+.section-marker > .line,
+.issue-divider > .line,
+.rule-accent,
+.short-rule,
+.accent-line{
+  display:none!important;
+}
+
+/* Any hr uses the same system */
+hr{
+  border:0!important;
+  border-top:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+  height:0!important;
+}
+</style>
+<style id="v11-gatherings-layout-fix">
+/* Gatherings: consistent 1px rules, left-aligned titles, tighter vertical rhythm */
+:root { --gather-rule: 1px; }
+
+/* Remove decorative thick/short accent rules around event headers */
+.event-section::before,
+.event-section::after,
+.event-head::before,
+.event-head::after,
+.event-title::before,
+.event-title::after,
+.gathering::before,
+.gathering::after,
+.gathering-head::before,
+.gathering-head::after,
+figure::before,
+figure::after {
+  border-width: 0 !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Any remaining event separators should be one consistent thin line */
+.event-section,
+.gathering {
+  border-top-width: var(--gather-rule) !important;
+  border-bottom-width: 0 !important;
+}
+
+/* Keep section/event titles anchored left rather than centered */
+.event-head,
+.gathering-head,
+.event-title,
+.gathering-title {
+  text-align: left !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+.event-head h2,
+.event-head h3,
+.gathering-head h2,
+.gathering-head h3,
+.event-title,
+.gathering-title {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Tighten the large dead zones between heading, image, and details */
+main section,
+.event-section,
+.gathering {
+  padding-top: 42px !important;
+  padding-bottom: 42px !important;
+}
+.event-head,
+.gathering-head {
+  margin-bottom: 30px !important;
+  padding-top: 0 !important;
+  padding-bottom: 22px !important;
+}
+.event-grid,
+.gathering-grid,
+.event-body,
+.gathering-body {
+  gap: 36px !important;
+  margin-top: 0 !important;
+}
+.event-section figure,
+.gathering figure {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* The page intro does not need an oversized gap before Event I */
+main > section:first-of-type {
+  padding-bottom: 48px !important;
+}
+
+@media (max-width: 800px) {
+  main section,
+  .event-section,
+  .gathering {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+  .event-head,
+  .gathering-head {
+    margin-bottom: 20px !important;
+    padding-bottom: 16px !important;
+  }
+  .event-grid,
+  .gathering-grid,
+  .event-body,
+  .gathering-body {
+    gap: 20px !important;
+  }
+}
+</style>
+
+<style id="v12-final-gatherings-fixes">
+/* Force event title rows to be left-aligned */
+.event-head, .gathering-head,
+[class*="event-head"], [class*="gathering-head"] {
+  display:block !important;
+  text-align:left !important;
+  padding-left:0 !important;
+}
+.event-head h1, .event-head h2, .event-head h3,
+.gathering-head h1, .gathering-head h2, .gathering-head h3,
+[class*="event-head"] h1, [class*="event-head"] h2, [class*="event-head"] h3,
+[class*="gathering-head"] h1, [class*="gathering-head"] h2, [class*="gathering-head"] h3 {
+  width:100% !important;
+  max-width:none !important;
+  text-align:left !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+  justify-self:start !important;
+  transform:none !important;
+}
+
+/* Kill the short bold decorative strokes while retaining thin structural separators */
+.event-head::before, .event-head::after,
+.gathering-head::before, .gathering-head::after,
+.event-title::before, .event-title::after,
+.gathering-title::before, .gathering-title::after,
+[class*="event-head"]::before, [class*="event-head"]::after,
+[class*="gathering-head"]::before, [class*="gathering-head"]::after {
+  content:none !important;
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  border:0 !important;
+}
+.event-head *, .gathering-head * {
+  border-top-width:0 !important;
+  border-bottom-width:0 !important;
+}
+
+/* Keep only full-width, subtle 1px section separation */
+.event-section, .gathering {
+  border-top:1px solid rgba(239,230,216,.18) !important;
+  border-bottom:0 !important;
+}
+
+/* Compact the invitation / "Phones down" block */
+.invite-section, .closing-section, .join-section,
+section:has(h2:nth-child(1)) {
+  min-height:0 !important;
+}
+/* Target the actual Phones down heading regardless of its class */
+section:has(h1), section:has(h2), section:has(h3) {
+  box-sizing:border-box;
+}
+section:has(h1) h1, section:has(h2) h2, section:has(h3) h3 {
+  max-height:none;
+}
+</style>
+
+<style>
+.v12-phones-section{
+  min-height:0!important;
+  padding-top:34px!important;
+  padding-bottom:34px!important;
+  margin-top:0!important;
+  margin-bottom:0!important;
+}
+.v12-phones-section > *{
+  margin-top:0!important;
+}
+.v12-phones-section h1,.v12-phones-section h2,.v12-phones-section h3{
+  font-size:clamp(42px,5vw,76px)!important;
+  line-height:.96!important;
+  margin:0 0 14px!important;
+}
+.v12-phones-section p{
+  margin:0!important;
+  max-width:650px!important;
+}
+@media(max-width:800px){
+ .v12-phones-section{padding-top:24px!important;padding-bottom:24px!important;}
+ .v12-phones-section h1,.v12-phones-section h2,.v12-phones-section h3{
+   font-size:clamp(36px,11vw,52px)!important;
+ }
+}
+</style>
 </head>
 <body>
 <nav class="nav">
@@ -2162,14 +2756,13 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 <a href="events.html">Gatherings</a>
 <a href="about.html">About Us</a>
 <a href="reading-room.html">The Reading Room</a>
-</div>
+<a class="mobile-social-link" href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">@thinkandgather ↗</a></div>
 <button aria-label="Menu" class="menu-btn">☰</button>
 </div>
 </nav>
 <main>
 <section class="events-cover">
 <div class="events-frame events-title-only">
-
 <div class="events-cover-copy">
 <div class="micro">Think &amp; Gather · The 2026—27 Season</div>
 <h1 class="display">The Gatherings.</h1>
@@ -2181,7 +2774,7 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 </section>
 <div class="issue-divider">
 <div class="num display">I</div>
-<div class="label"><h2>THE DEBATE</h2></div>
+<div class="label"><h2 class="display event-chapter-title">THE DEBATE</h2></div>
 </div>
 <section class="gathering-feature" id="debate">
 <div class="gathering-visual">
@@ -2192,43 +2785,20 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 <h3 class="display">Is AI doing more good than harm?</h3>
 <div class="tagline">Two sides. One room. Plenty to disagree about.</div>
 <p>We’ll start with conversation cards and a little mingling, then split the room, build arguments, challenge each other, pull a few wild cards, and see whether anyone changes their mind by the end.</p>
-<ul class="gathering-list">
+<button aria-expanded="false" class="details-bar-v2 more-details-btn event-primary-cta" type="button">MORE DETAILS +</button><div class="event-more-wrap">
+<div class="event-more"><section class="detail-block-v2"><h4>THE IDEA</h4><p>The point of the night isn’t to “win” an argument. It’s to hear how other people think, defend a position thoughtfully, and maybe leave a little less certain than you arrived.</p></section><section class="detail-block-v2"><h4>WHAT TO EXPECT</h4><p>We’ll begin socially, with conversation cards and time to meet people before the debate starts. Then the room will split into two sides. Each team gets time to brainstorm its strongest arguments, examples, counterpoints, and questions for the other side before we open the floor.</p></section><section class="detail-block-v2"><h4>THE EVENING</h4><ul class="gathering-list">
 <li><span>I</span><span>Arrive, mingle &amp; conversation cards</span></li>
 <li><span>II</span><span>Choose a side</span></li>
 <li><span>III</span><span>Team huddle</span></li>
 <li><span>IV</span><span>Moderated debate</span></li>
 <li><span>V</span><span>Wild cards + final arguments</span></li>
 <li><span>VI</span><span>Final vote</span></li>
-</ul>
-<button aria-expanded="false" class="more-details-btn event-primary-cta" type="button">More details +</button><div class="event-more-wrap">
-<div class="event-more">
-<p class="event-purpose">The point of the night isn’t to “win” an argument. It’s to hear how other people think, defend a position thoughtfully, and maybe leave a little less certain than you arrived.</p>
-<p>We’ll begin socially, with conversation cards and time to meet people before the debate starts. Then the room will split into two sides. Each team gets time to brainstorm its strongest arguments, examples, counterpoints, and questions for the other side before we open the floor.</p>
-<h4 class="display">The evening</h4>
-<div class="debate-timeline">
-<div class="timeline-row"><div class="time">4:00 PM</div><div class="desc">Arrive, mingle &amp; conversation cards</div></div>
-<div class="timeline-row"><div class="time">4:30 PM</div><div class="desc">Pick a side</div></div>
-<div class="timeline-row"><div class="time">4:35 PM</div><div class="desc">Team huddle — build your case, choose your strongest points, predict the other side’s argument</div></div>
-<div class="timeline-row"><div class="time">4:55 PM</div><div class="desc">The debate begins</div></div>
-<div class="timeline-row"><div class="time">5:35 PM</div><div class="desc">Wild cards, challenges &amp; final arguments</div></div>
-<div class="timeline-row"><div class="time">5:50 PM</div><div class="desc">Final vote — where do you actually stand now?</div></div>
-<div class="timeline-row"><div class="time">6:00 PM</div><div class="desc">Stay, talk, disagree, keep the conversation going</div></div>
-</div>
-<h4 class="display">What we’ll get into</h4>
-<ul class="detail-list">
-<li><span>I</span><span>Is AI making us more capable — or less capable of thinking for ourselves?</span></li>
-<li><span>II</span><span>Will AI create more opportunity than it takes away?</span></li>
-<li><span>III</span><span>What makes human creativity valuable if AI can produce art, writing and ideas?</span></li>
-<li><span>IV</span><span>Does AI put too much power in the hands of companies and governments?</span></li>
-<li><span>V</span><span>Will AI strengthen human connection — or slowly replace parts of it?</span></li>
-<li><span>VI</span><span>Is the greater risk developing AI too quickly, or limiting a technology that could help humanity?</span></li>
-</ul>
-</div>
+</ul></section></div>
 </div></div>
 </section>
 <div class="issue-divider">
 <div class="num display">II</div>
-<div class="label"><h2>MURDER MYSTERY</h2></div>
+<div class="label"><h2 class="display event-chapter-title">MURDER MYSTERY</h2></div>
 </div>
 <section class="gathering-feature reverse" id="murder-mystery">
 <div class="gathering-visual">
@@ -2236,28 +2806,22 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 <div class="fig">Fig. 02 — Someone is lying</div>
 </div>
 <div class="gathering-copy"><div class="event-date-banner"><div><span class="event-meta-label">DATE</span><strong>OCTOBER 2026</strong></div><div><span class="event-meta-label">TIME</span><strong>TIME TO COME</strong></div></div>
-<div class="month">October · Miami</div>
 <h3 class="display">Murder Mystery</h3>
 <div class="tagline">Someone in the room is lying.</div>
 <p>A room full of clues, characters, suspicion, and at least one person you probably shouldn’t trust. Come ready to play along, ask questions, and make a very confident accusation based on questionable evidence.</p>
-<ul class="gathering-list">
+<button aria-expanded="false" class="details-bar-v2 more-details-btn event-primary-cta" type="button">MORE DETAILS +</button><div class="event-more-wrap">
+<div class="event-more"><section class="detail-block-v2"><h4>THE IDEA</h4><p>A night built around play, observation, deduction, and the very specific joy of realizing someone has been lying to your face for the last twenty minutes.</p></section><section class="detail-block-v2"><h4>WHAT TO EXPECT</h4><p>Guests will step into characters, follow clues, question one another, and try to piece together what actually happened. You don’t need acting experience, and you definitely don’t need to be good at lying. The fun is in getting involved. Expect a mix of mingling, clue drops, suspicion, alliances, accusations and a final reveal. Costumes may be encouraged depending on the story.</p></section><section class="detail-block-v2"><h4>THE EVENING</h4><ul class="gathering-list">
 <li><span>I</span><span>Receive your character</span></li>
 <li><span>II</span><span>Follow the clues</span></li>
 <li><span>III</span><span>Question the room</span></li>
 <li><span>IV</span><span>Build your theory</span></li>
 <li><span>V</span><span>Reveal the culprit</span></li>
-</ul>
-<button aria-expanded="false" class="more-details-btn event-primary-cta" type="button">More details +</button><div class="event-more-wrap">
-<div class="event-more">
-<p class="event-purpose">A night built around play, observation, deduction, and the very specific joy of realizing someone has been lying to your face for the last twenty minutes.</p>
-<p>Guests will step into characters, follow clues, question one another, and try to piece together what actually happened. You don’t need acting experience, and you definitely don’t need to be good at lying. The fun is in getting involved.</p>
-<p>Expect a mix of mingling, clue drops, suspicion, alliances, accusations and a final reveal. Costumes may be encouraged depending on the story.</p>
-</div>
+</ul></section></div>
 </div></div>
 </section>
 <div class="issue-divider">
 <div class="num display">III</div>
-<div class="label"><h2>POTLUCK &amp; SPEED TEACHING</h2></div>
+<div class="label"><h2 class="display event-chapter-title">POTLUCK &amp; SPEED LEARNING</h2></div>
 </div>
 <section class="gathering-feature" id="speed-teaching">
 <div class="gathering-visual">
@@ -2265,27 +2829,21 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 <div class="fig">Fig. 03 — Five minutes, any subject</div>
 </div>
 <div class="gathering-copy"><div class="event-date-banner"><div><span class="event-meta-label">DATE</span><strong>NOVEMBER 2026</strong></div><div><span class="event-meta-label">TIME</span><strong>TIME TO COME</strong></div></div>
-<div class="month">November · Miami</div>
 <h3 class="display">Potluck &amp; Speed Teaching</h3>
 <div class="tagline">Bring a dish. Teach us something.</div>
 <p>Pick something you’re curious about, learn enough to teach it, and give the room a five-minute crash course. The topic can be useful, strange, niche, academic, ridiculous — whatever you think is worth knowing.</p>
-<ul class="gathering-list">
+<button aria-expanded="false" class="details-bar-v2 more-details-btn event-primary-cta" type="button">MORE DETAILS +</button><div class="event-more-wrap">
+<div class="event-more"><section class="detail-block-v2"><h4>THE IDEA</h4><p>This one is about remembering how fun it is to learn something for no reason other than wanting to know it.</p></section><section class="detail-block-v2"><h4>WHAT TO EXPECT</h4><p>Every person chooses a topic, researches it beforehand, and comes prepared to give the room a five-minute crash course. It can be serious, niche, absurd, academic or completely impractical — the history of perfume, black holes, why cults work, game theory, the psychology of memory, anything. We’ll pair the mini lessons with a potluck, so everyone also brings something to share. By the end of the night, you should know a little bit about a lot of things — and probably have several new rabbit holes to go down.</p></section><section class="detail-block-v2"><h4>THE EVENING</h4><ul class="gathering-list">
 <li><span>I</span><span>Bring one dish to share</span></li>
 <li><span>II</span><span>Choose any subject</span></li>
 <li><span>III</span><span>Prepare a five-minute lesson</span></li>
 <li><span>IV</span><span>Learn something from everyone else</span></li>
-</ul>
-<button aria-expanded="false" class="more-details-btn event-primary-cta" type="button">More details +</button><div class="event-more-wrap">
-<div class="event-more">
-<p class="event-purpose">This one is about remembering how fun it is to learn something for no reason other than wanting to know it.</p>
-<p>Every person chooses a topic, researches it beforehand, and comes prepared to give the room a five-minute crash course. It can be serious, niche, absurd, academic or completely impractical — the history of perfume, black holes, why cults work, game theory, the psychology of memory, anything.</p>
-<p>We’ll pair the mini lessons with a potluck, so everyone also brings something to share. By the end of the night, you should know a little bit about a lot of things — and probably have several new rabbit holes to go down.</p>
-</div>
+</ul></section></div>
 </div></div>
 </section>
 <div class="issue-divider">
 <div class="num display">IV</div>
-<div class="label"><h2>MOVIE NIGHT</h2></div>
+<div class="label"><h2 class="display event-chapter-title">MOVIE NIGHT</h2></div>
 </div>
 <section class="gathering-feature reverse" id="movie-night">
 <div class="gathering-visual">
@@ -2293,27 +2851,21 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 <div class="fig">Fig. 04 — Watch, then argue about it</div>
 </div>
 <div class="gathering-copy"><div class="event-date-banner"><div><span class="event-meta-label">DATE</span><strong>DECEMBER 2026</strong></div><div><span class="event-meta-label">TIME</span><strong>TIME TO COME</strong></div></div>
-<div class="month">December · Miami</div>
 <h3 class="display">Movie Night</h3>
 <div class="tagline">Watch. Stay for the conversation.</div>
 <p>We watch something worth talking about, then stay for the part where everyone somehow saw a different film.</p>
-<ul class="gathering-list">
+<button aria-expanded="false" class="details-bar-v2 more-details-btn event-primary-cta" type="button">MORE DETAILS +</button><div class="event-more-wrap">
+<div class="event-more"><section class="detail-block-v2"><h4>THE IDEA</h4><p>Movie night, but for people who think the best part sometimes starts after the credits.</p></section><section class="detail-block-v2"><h4>WHAT TO EXPECT</h4><p>We’ll choose a film with enough beneath the surface to actually talk about. After the screening, we’ll move into a guided conversation around the choices, themes, moral questions, characters, and whatever everyone interpreted differently. No film-studies vocabulary required. Just watch closely and come ready to say what you noticed.</p></section><section class="detail-block-v2"><h4>THE EVENING</h4><ul class="gathering-list">
 <li><span>I</span><span>Film screening</span></li>
 <li><span>II</span><span>Short intermission</span></li>
 <li><span>III</span><span>Guided conversation</span></li>
 <li><span>IV</span><span>Open floor</span></li>
-</ul>
-<button aria-expanded="false" class="more-details-btn event-primary-cta" type="button">More details +</button><div class="event-more-wrap">
-<div class="event-more">
-<p class="event-purpose">Movie night, but for people who think the best part sometimes starts after the credits.</p>
-<p>We’ll choose a film with enough beneath the surface to actually talk about. After the screening, we’ll move into a guided conversation around the choices, themes, moral questions, characters, and whatever everyone interpreted differently.</p>
-<p>No film-studies vocabulary required. Just watch closely and come ready to say what you noticed.</p>
-</div>
+</ul></section></div>
 </div></div>
 </section>
 <div class="issue-divider">
 <div class="num display">V</div>
-<div class="label"><h2>VISION BOARDING</h2></div>
+<div class="label"><h2 class="display event-chapter-title">VISION BOARDING</h2></div>
 </div>
 <section class="gathering-feature" id="vision-boarding">
 <div class="gathering-visual">
@@ -2321,27 +2873,21 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 <div class="fig">Fig. 05 — What comes next</div>
 </div>
 <div class="gathering-copy"><div class="event-date-banner"><div><span class="event-meta-label">DATE</span><strong>JANUARY 2027</strong></div><div><span class="event-meta-label">TIME</span><strong>TIME TO COME</strong></div></div>
-<div class="month">January · Miami</div>
 <h3 class="display">Vision Boarding</h3>
 <div class="tagline">An evening devoted to what comes next.</div>
 <p>A night to think about what you want next, cut things out of magazines, make something with your hands, and put a little shape around the future you keep imagining.</p>
-<ul class="gathering-list">
+<button aria-expanded="false" class="details-bar-v2 more-details-btn event-primary-cta" type="button">MORE DETAILS +</button><div class="event-more-wrap">
+<div class="event-more"><section class="detail-block-v2"><h4>THE IDEA</h4><p>A slower night for thinking intentionally about what you want the next chapter of your life to look and feel like.</p></section><section class="detail-block-v2"><h4>WHAT TO EXPECT</h4><p>We’ll start with a few prompts to get beyond the usual “dream house / dream job” version of vision boarding and think more about values, experiences, relationships, habits, curiosity, and the kind of life you actually want to be living. Then we’ll make the boards, talk, share if we want to, and leave with something tangible to take home.</p></section><section class="detail-block-v2"><h4>THE EVENING</h4><ul class="gathering-list">
 <li><span>I</span><span>Prompted reflection</span></li>
 <li><span>II</span><span>Vision board making</span></li>
 <li><span>III</span><span>Optional sharing</span></li>
 <li><span>IV</span><span>Take-home intentions</span></li>
-</ul>
-<button aria-expanded="false" class="more-details-btn event-primary-cta" type="button">More details +</button><div class="event-more-wrap">
-<div class="event-more">
-<p class="event-purpose">A slower night for thinking intentionally about what you want the next chapter of your life to look and feel like.</p>
-<p>We’ll start with a few prompts to get beyond the usual “dream house / dream job” version of vision boarding and think more about values, experiences, relationships, habits, curiosity, and the kind of life you actually want to be living.</p>
-<p>Then we’ll make the boards, talk, share if we want to, and leave with something tangible to take home.</p>
-</div>
+</ul></section></div>
 </div></div>
 </section>
 <div class="issue-divider">
 <div class="num display">VI</div>
-<div class="label"><h2>BOOK CLUB</h2></div>
+<div class="label"><h2 class="display event-chapter-title">BOOK CLUB</h2></div>
 </div>
 <section class="gathering-feature reverse" id="book-club">
 <div class="gathering-visual">
@@ -2349,25 +2895,19 @@ body{background:var(--museum-black,#160c09);color:var(--museum-white,#f4f0e8)}
 <div class="fig">Fig. 06 — One book, many interpretations</div>
 </div>
 <div class="gathering-copy"><div class="event-date-banner"><div><span class="event-meta-label">DATE</span><strong>FEBRUARY 2027</strong></div><div><span class="event-meta-label">TIME</span><strong>TIME TO COME</strong></div></div>
-<div class="month">February · Miami</div>
 <h3 class="display">Book Club</h3>
 <div class="tagline">One book. Many interpretations.</div>
 <p>Come ready to talk about what stayed with you, what annoyed you, what you underlined, and the part you’re still thinking about days later.</p>
-<ul class="gathering-list">
+<button aria-expanded="false" class="details-bar-v2 more-details-btn event-primary-cta" type="button">MORE DETAILS +</button><div class="event-more-wrap">
+<div class="event-more"><section class="detail-block-v2"><h4>THE IDEA</h4><p>Less “summarize chapter seven,” more “what did this book make you think about?”</p></section><section class="detail-block-v2"><h4>WHAT TO EXPECT</h4><p>We’ll choose a book in advance and come together around the ideas it raises rather than trying to have an academic discussion about it. Bring the passages you underlined, the parts you disagreed with, the character you couldn’t stand, or the question you kept thinking about afterward. The goal is not to agree on the book. It’s to use the book as a reason to have a better conversation.</p></section><section class="detail-block-v2"><h4>THE EVENING</h4><ul class="gathering-list">
 <li><span>I</span><span>Selected monthly read</span></li>
 <li><span>II</span><span>Guided questions</span></li>
 <li><span>III</span><span>Favorite passages</span></li>
 <li><span>IV</span><span>Open discussion</span></li>
-</ul>
-<button aria-expanded="false" class="more-details-btn event-primary-cta" type="button">More details +</button><div class="event-more-wrap">
-<div class="event-more">
-<p class="event-purpose">Less “summarize chapter seven,” more “what did this book make you think about?”</p>
-<p>We’ll choose a book in advance and come together around the ideas it raises rather than trying to have an academic discussion about it. Bring the passages you underlined, the parts you disagreed with, the character you couldn’t stand, or the question you kept thinking about afterward.</p>
-<p>The goal is not to agree on the book. It’s to use the book as a reason to have a better conversation.</p>
-</div>
+</ul></section></div>
 </div></div>
 </section>
-<section class="private-strip">
+<section class="private-strip v12-phones-section">
 <div class="micro">Private social club · Miami</div>
 <div>
 <h2 class="display">Phones down.<br/>Come inside.</h2>
@@ -2443,6 +2983,16 @@ document.addEventListener('DOMContentLoaded', function(){
         btn.setAttribute('aria-expanded','false');
         btn.textContent = '☰';
       });
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.more-details-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.textContent = open ? 'MORE DETAILS +' : 'MORE DETAILS −';
     });
   });
 });

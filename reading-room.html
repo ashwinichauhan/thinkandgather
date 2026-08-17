@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en"><head>
 <meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>The Reading Room — Think &amp; Gather</title>
@@ -1299,6 +1300,288 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
   }
 }
 </style>
+<style>
+/* ===== Think & Gather UI System v2 ===== */
+:root{
+  --tg-bg:#160c09;
+  --tg-bg-soft:#1d100c;
+  --tg-cream:#f3eadf;
+  --tg-muted:#b7a89b;
+  --tg-rule:rgba(243,234,223,.18);
+  --tg-rule-strong:rgba(243,234,223,.38);
+  --tg-gutter:clamp(18px,4vw,52px);
+  --tg-section:clamp(72px,8vw,112px);
+}
+html{scroll-behavior:smooth}
+body{background:var(--tg-bg);color:var(--tg-cream)}
+main > section:not(.cover):not(.events-cover):not(.about-hero):not(.reading-hero){
+  padding-top:var(--tg-section);
+  padding-bottom:var(--tg-section);
+}
+.display,h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+p{line-height:1.65}
+.micro,.event-meta-label,.month{
+  font-family:Arial,Helvetica,sans-serif!important;
+  text-transform:uppercase;
+  letter-spacing:.16em!important;
+}
+.cta,.talk-link,.instagram-live-link,.instagram-strip a,.more-details-btn{
+  font-family:Arial,Helvetica,sans-serif!important;
+  text-transform:uppercase;
+  letter-spacing:.14em!important;
+}
+
+/* one consistent primary and secondary CTA language */
+.primary-cta{
+  display:inline-flex!important;align-items:center;justify-content:center;
+  min-height:46px;padding:0 18px!important;border:1px solid rgba(243,234,223,.55)!important;
+  color:var(--tg-cream)!important;background:transparent!important;text-decoration:none!important;
+  font-size:10px!important;letter-spacing:.14em!important;
+}
+.secondary-cta{
+  display:inline-block;color:var(--tg-cream)!important;text-decoration:none!important;
+  font-size:10px!important;letter-spacing:.14em!important;padding-bottom:7px;
+  border-bottom:1px solid rgba(243,234,223,.58);
+}
+
+/* restrained image language */
+.gathering-visual img,.about-why-image img,.about-end-image img,
+.reading-grid img,.corr-image img,.talk-section-image img,.instagram-photo-cell img{
+  filter:saturate(.84) sepia(.05) brightness(.92);
+}
+
+/* subtle reveal */
+.reveal,.gathering-feature,.article-row,.principle-row{
+  opacity:0;transform:translateY(12px);
+  animation:tgReveal .65s ease forwards;
+}
+@keyframes tgReveal{to{opacity:1;transform:none}}
+
+/* full-screen mobile menu */
+.mobile-social-link{display:none}
+@media(max-width:900px){
+  .nav-links{
+    position:fixed!important;
+    inset:0!important;
+    top:0!important;
+    z-index:999!important;
+    background:rgba(22,12,9,.985)!important;
+    display:none!important;
+    flex-direction:column!important;
+    justify-content:center!important;
+    align-items:flex-start!important;
+    padding:90px 28px 80px!important;
+    gap:0!important;
+  }
+  .nav-links.open{display:flex!important}
+  .nav-links a{
+    width:100%!important;
+    padding:15px 0!important;
+    border-bottom:1px solid var(--tg-rule)!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:34px!important;
+    line-height:1!important;
+    letter-spacing:-.02em!important;
+    text-transform:none!important;
+  }
+  .mobile-social-link{
+    display:block!important;
+    position:absolute;
+    left:28px;bottom:32px;
+    font-family:Arial,Helvetica,sans-serif!important;
+    font-size:10px!important;letter-spacing:.16em!important;
+    border:0!important;
+  }
+  .menu-btn{position:relative;z-index:1000!important}
+  main > section:not(.cover):not(.events-cover):not(.about-hero):not(.reading-hero){
+    padding-top:50px;
+    padding-bottom:50px;
+  }
+}
+</style>
+<style>
+.article-row{padding:34px 0!important;grid-template-columns:48px 1fr auto!important}
+.article-row h3{font-size:clamp(32px,4vw,52px)!important;line-height:1!important}
+.article-meta-v2{display:flex;gap:18px;margin-bottom:10px;font:9px Arial,sans-serif;letter-spacing:.16em;color:var(--tg-muted)}
+.article-row .arrow{font:10px Arial,sans-serif!important;letter-spacing:.12em!important;white-space:nowrap}
+@media(max-width:800px){
+ .article-row{grid-template-columns:32px 1fr!important}
+ .article-row .arrow{grid-column:2;margin-top:10px}
+ .article-row h3{font-size:28px!important}
+}
+</style>
+<style>
+/* ===== v4: tighter rhythm + intentional borders ===== */
+:root{
+  --tg-rule-soft:rgba(243,234,223,.13);
+  --tg-rule-mid:rgba(243,234,223,.22);
+  --tg-rule-strong:rgba(243,234,223,.34);
+}
+
+/* Remove decorative/redundant borders that create visual noise */
+main > section{
+  border-top:0!important;
+  border-bottom:0!important;
+}
+.section-marker,
+.issue-divider,
+.event-date-banner,
+.details-bar-v2,
+.article-row,
+.principle-row,
+.instagram-strip-foot{
+  border-color:var(--tg-rule-mid)!important;
+}
+
+/* Use a single separator system: one line at the START of a major section */
+.section-marker,
+.issue-divider{
+  border-top:1px solid var(--tg-rule-strong)!important;
+  border-bottom:0!important;
+}
+.section-marker::before,
+.section-marker::after,
+.issue-divider::before,
+.issue-divider::after{
+  box-shadow:none!important;
+}
+
+/* Content rows get only a bottom rule */
+.season-row-v2,
+.article-row,
+.principle-row,
+.detail-block-v2{
+  border-top:0!important;
+  border-bottom:1px solid var(--tg-rule-soft)!important;
+}
+
+/* No extra borders around section wrappers */
+.next-grid,
+.reading-grid,
+.corr-grid,
+.reader-grid,
+.about-spread,
+.about-why,
+.about-end,
+.gathering-feature{
+  border-top:0!important;
+  border-bottom:0!important;
+}
+</style>
+
+<style>
+/* ===== v6: ONE consistent rule thickness everywhere ===== */
+:root{
+  --tg-rule-color: rgba(243,234,223,.22);
+  --tg-rule-width: 1px;
+}
+
+/* All structural rules use exactly one thickness + one opacity */
+.section-marker,
+.issue-divider,
+.event-date-banner,
+.details-bar-v2,
+.season-row-v2,
+.article-row,
+.principle-row,
+.detail-block-v2,
+.instagram-strip-foot,
+.meta-strip,
+.choice,
+.result,
+.next-grid,
+.reading-grid,
+.corr-grid,
+.reader-grid,
+.about-spread,
+.about-why,
+.about-end,
+.gathering-feature,
+.events-frame,
+.events-cover,
+.talk-section-restored,
+.phones-compact-v2{
+  border-color:var(--tg-rule-color)!important;
+}
+
+/* Major section separators */
+.section-marker,
+.issue-divider{
+  border-top:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+  border-bottom:0!important;
+}
+
+/* Rows */
+.season-row-v2,
+.article-row,
+.principle-row,
+.detail-block-v2{
+  border-top:0!important;
+  border-bottom:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Date/time and expandable details */
+.event-date-banner,
+.details-bar-v2,
+.meta-strip{
+  border-top:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+  border-bottom:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Internal vertical dividers */
+.event-date-banner > * + *,
+.meta-strip > * + *{
+  border-left:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Remove decorative short strokes / pseudo rules that created thick accents */
+.section-marker::before,
+.section-marker::after,
+.issue-divider::before,
+.issue-divider::after,
+.gathering-copy::before,
+.gathering-copy::after,
+.events-frame::before,
+.events-frame::after{
+  display:none!important;
+  content:none!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+
+/* Remove old accent borders on chapter number/label cells */
+.issue-divider .num,
+.issue-divider .label,
+.section-marker .num,
+.section-marker .name{
+  border-width:0!important;
+  border-color:transparent!important;
+}
+
+/* Keep only a single clean divider between numeral and title */
+.issue-divider .num{
+  border-right:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+}
+
+/* Kill stray standalone ornamental line elements */
+.gathering-feature > .line,
+.gathering-copy > .line,
+.events-frame > .line,
+.section-marker > .line,
+.issue-divider > .line,
+.rule-accent,
+.short-rule,
+.accent-line{
+  display:none!important;
+}
+
+/* Any hr uses the same system */
+hr{
+  border:0!important;
+  border-top:var(--tg-rule-width) solid var(--tg-rule-color)!important;
+  height:0!important;
+}
+</style>
 </head><body>
 <nav class="nav">
 <div class="nav-inner shell">
@@ -1310,7 +1593,7 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
 <a href="events.html">Gatherings</a>
 <a href="about.html">About Us</a>
 <a href="reading-room.html">The Reading Room</a>
-</div>
+<a class="mobile-social-link" href="https://www.instagram.com/thinkandgather/" rel="noopener" target="_blank">@thinkandgather ↗</a></div>
 <button aria-label="Menu" class="menu-btn">☰</button>
 </div>
 </nav>
@@ -1327,34 +1610,34 @@ footer{max-width:1320px;margin:0 auto;border:1px solid var(--rule);border-top:0;
 </div>
 <a class="article-row" href="/article-changing-your-mind.html">
 <span class="micro">01</span>
-<h3>The Case for Changing Your Mind</h3>
+<div class="article-meta-v2"><span>IDEAS</span><span>6 MIN READ</span></div><h3>The Case for Changing Your Mind</h3>
 <p>Changing your mind has a branding problem. We treat certainty like strength, even when the more interesting skill is knowing when a belief has earned a revision.</p>
-<span class="arrow">↗</span>
+<span class="arrow">READ ↗</span>
 </a><a class="article-row" href="/article-talking-to-strangers.html">
 <span class="micro">02</span>
-<h3>Why We Don’t Know How to Talk to Strangers Anymore</h3>
+<div class="article-meta-v2"><span>IDEAS</span><span>5 MIN READ</span></div><h3>Why We Don’t Know How to Talk to Strangers Anymore</h3>
 <p>We say we want community, then spend most public moments making ourselves unavailable to it.</p>
-<span class="arrow">↗</span>
+<span class="arrow">READ ↗</span>
 </a><a class="article-row" href="/article-in-defense-of-boredom.html">
 <span class="micro">03</span>
-<h3>In Defense of Boredom</h3>
+<div class="article-meta-v2"><span>IDEAS</span><span>5 MIN READ</span></div><h3>In Defense of Boredom</h3>
 <p>Boredom is uncomfortable partly because it removes the usual escape route. That may be exactly why it is worth protecting.</p>
-<span class="arrow">↗</span>
+<span class="arrow">READ ↗</span>
 </a><a class="article-row" href="/article-third-place.html">
 <span class="micro">04</span>
-<h3>Whatever Happened to the Third Place?</h3>
+<div class="article-meta-v2"><span>IDEAS</span><span>7 MIN READ</span></div><h3>Whatever Happened to the Third Place?</h3>
 <p>Home is private. Work is productive. We still need somewhere that asks almost nothing of us except that we show up.</p>
-<span class="arrow">↗</span>
+<span class="arrow">READ ↗</span>
 </a><a class="article-row" href="/article-being-interesting.html">
 <span class="micro">05</span>
-<h3>Is Being Interesting a Skill?</h3>
+<div class="article-meta-v2"><span>IDEAS</span><span>5 MIN READ</span></div><h3>Is Being Interesting a Skill?</h3>
 <p>The most interesting person in the room may not be the person with the best stories. It may be the person who makes everyone else more interesting.</p>
-<span class="arrow">↗</span>
+<span class="arrow">READ ↗</span>
 </a><a class="article-row" href="/article-dinner-party.html">
 <span class="micro">06</span>
-<h3>The Death of the Dinner Party</h3>
+<div class="article-meta-v2"><span>IDEAS</span><span>6 MIN READ</span></div><h3>The Death of the Dinner Party</h3>
 <p>The dinner party does something modern social life is increasingly bad at: it gives people a reason to stay in the same room long enough for the conversation to change.</p>
-<span class="arrow">↗</span>
+<span class="arrow">READ ↗</span>
 </a>
 </section>
 <section class="reading-note">
@@ -1411,6 +1694,16 @@ document.addEventListener('DOMContentLoaded', function(){
         btn.setAttribute('aria-expanded','false');
         btn.textContent = '☰';
       });
+    });
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.more-details-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.textContent = open ? 'MORE DETAILS +' : 'MORE DETAILS −';
     });
   });
 });
